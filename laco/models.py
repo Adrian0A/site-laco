@@ -8,7 +8,7 @@ class Preco(models.Model):
 class Tema(models.Model):
     tema = models.CharField(max_length= 64)
 
-class Laco:
+class Laco(models.Model):
     preco = models.ForeignKey(Preco, on_delete=models.CASCADE)
     tema = models.ForeignKey(Tema, on_delete=models.CASCADE)
 

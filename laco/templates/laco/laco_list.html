@@ -1,0 +1,30 @@
+{% extends "home/main.html" %}
+{% csrf_token %}
+{% block content %} 
+<h1>Lista de laços:</h1>
+<a href="{% url 'laco:tema_create'  %}"> Cadastrar Tema</a> <br/>
+<a href="{% url 'laco:tema_list'    %}"> Listar Temas Cadastrados</a> <br/>
+<a href="{% url 'laco:preco_create' %}"> Cadastrar Preço</a> <br/>
+<a href="{% url 'laco:preco_list'   %}"> Listar Preços Cadastrados</a> <br/>
+<a href="{% url 'laco:laco_create'  %}"> Cadastrar Laço</a> <br/>
+
+    {% if laco_list %}
+        <ul>
+
+            {% for laco in laco_list%} 
+            <li> Tema:{{laco.tema}}|Preço:{{laco.preco}} (
+                <a href="{% url 'laco:laco_update' laco.id %}">Update</a> |
+                <a href="{% url 'laco:laco_delete' laco.id %}">Delete</a> |
+                <a href="{% url 'laco:laco_detail' laco.id%}"> Detalhar</a> ) <br/>
+                 Descrição:{{laco.descricao}} </li>
+
+            {% endfor %}
+
+        </ul>
+
+    {% else %}
+        <p>Ainda não há laços cadastrados</p>
+
+    {% endif %}
+
+{% endblock %}

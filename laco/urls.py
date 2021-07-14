@@ -17,7 +17,7 @@ urlpatterns = [
 
     path('laco/tema', views.TemaListView.as_view(), name='tema_list'),
 
-    path('laco/tema/create', views.TemaCreateView.as_view(success_url= 'laco:tema_list'), name = 'tema_create'),
+    path('laco/tema/create', views.TemaCreateView.as_view(success_url= 'laco:all'), name = 'tema_create'),
 
     path('laco/tema/<int:pk>/delete', views.TemaDeleteView.as_view(success_url= 'laco:tema_list'), name='tema_delete'),
 
