@@ -1,0 +1,18 @@
+{% extends "home/main.html" %}
+{% csrf_token %}
+{% block content %}
+
+    <h1>Lista de preços cadastrados</h1>
+    <a href="{% url 'laco:all' %}">Lista de Laços Cadastrados</a>
+    <ul>
+        {% for preco in preco_list %}
+        <li>Preço:{{ preco }} (
+            <a href="{% url 'laco:preco_update' preco.id %}">Update</a>|
+            <a href="{% url 'laco:preco_delete' preco.id %}">Delete</a>)</li>
+        {% empty %}
+        <li>Ainda não há preços cadastrados</li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
