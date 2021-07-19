@@ -1,0 +1,19 @@
+body {
+    
+    background-color: pink;
+}
+
+#header-nav {
+    
+    background-color: black;
+}
+
+#logo-image {
+    width: 10%;
+}
+
+#main-content{
+    color: white;
+    background-color: white;
+    height: auto;
+}
